@@ -35,7 +35,7 @@ class ContactController extends Controller
                 "required",
                 "regex:/^(\+?20|0)?1[0125][0-9]{8}$/"
             ],
-            "email" => "required|email",
+            "email" => "required|email|unique:contacts,email",
             "cv" => "required|file|max:2048",
             "linkedin" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/",
             "github" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?github\.com\/.*$/",
@@ -90,7 +90,7 @@ class ContactController extends Controller
                 "required",
                 "regex:/^(\+?20|0)?1[0125][0-9]{8}$/"
             ],
-            "email" => "required|email",
+            "email" => "required|email|unique:contacts,email,$id",
             "cv" => "nullable|file|max:2048",
             "linkedin" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/",
             "github" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?github\.com\/.*$/",
