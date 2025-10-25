@@ -58,10 +58,14 @@
                         <input type="url" name="github" value="{{old('github')}}" class="form-control @error('github') is_invalid @enderror">
                     </div>
                     <div class="form-group mb-3">
-                        <textarea name="message" id="message" cols="30" rows="10"
-                        class="form-control @error('message') is-invalid @enderror"
-                        placeholder="Enter any message here...">{{old('message')}}</textarea>
+                        <label for="facebook">Facebook: </label>
+                        <input type="url" name="facebook" value="{{old('facebook')}}" class="form-control @error('facebook') is_invalid @enderror">
                     </div>
+                    <div class="form-group mb-3">
+                        <label for="instagram">Instagram: </label>
+                        <input type="url" name="instagram" value="{{old('instagram')}}" class="form-control @error('instagram') is_invalid @enderror">
+                    </div>
+
                     <div class="d-grid mt-3">
                         <button class="btn btn-primary">Send</button>
                     </div>

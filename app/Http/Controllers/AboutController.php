@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function index(Request $request)
-    {
+    public function index(Request $request){
         $search = $request->input('search');
         if($search){
             $abouts = About::where('client_id', $search)->get();
@@ -19,14 +18,12 @@ class AboutController extends Controller
         return view('about.index', compact('abouts'));
     }
 
-    public function create()
-    {
+    public function create(){
         $clients = Client::select('id', 'name')->get();
         return view('about.create', compact('clients'));
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
             "client_id" => "required",
             "content" => "required|string|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s\p{P}]+$/"
@@ -40,15 +37,13 @@ class AboutController extends Controller
         return redirect()->back()->with("success", "Added About to the client Successfully!");
     }
 
-    public function edit(string $id)
-    {
+    public function edit(string $id){
         $about = About::find($id);
         $clients = Client::select('id', 'name')->get();
         return view('about.edit', compact('about', 'clients'));
     }
 
-    public function update(Request $request, string $id)
-    {
+    public function update(Request $request, string $id){
         $request->validate([
             "client_id" => "required",
             "content" => "required|string"

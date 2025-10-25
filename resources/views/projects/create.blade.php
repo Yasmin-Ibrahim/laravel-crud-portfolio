@@ -18,7 +18,7 @@
             </ul>
         </div>
     @endif
-    
+
     <div class="card">
         <div class="card-title">
             <a href="{{route('project.index')}}" class="btn btn-primary float-end m-3">Back</a>
@@ -53,7 +53,7 @@
                         @enderror">
                 </div>
                  <div class="form-group mb-3">
-                    <textarea class="form-control" id="descriptionBox" name="description" cols="30" rows="10">Description's Project: </textarea>
+                    <textarea class="form-control" id="descriptionBox" name="description" cols="30" rows="10" placeholder="Description's Project:"> </textarea>
                 </div>
                 <div class="form-group mb-3">
                     <label for="image">Image: </label>

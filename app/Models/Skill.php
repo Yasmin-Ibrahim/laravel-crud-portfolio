@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Skill extends Model
 {
     use HasFactory;
-    protected $table = "Skills";
+    protected $table = "skills";
     protected $guarded = [];
 
     public function client(){

@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('cv')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('github')->nullable();
-            $table->string('message')->nullable();
+            $table->string('facebbok')->nullable();
+            $table->string('instagram')->nullable();
             $table->timestamps();
         });
     }

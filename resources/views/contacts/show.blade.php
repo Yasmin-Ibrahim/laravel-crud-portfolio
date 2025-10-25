@@ -36,6 +36,10 @@
                 <h6>Linkedin: <a href="{{$contact->linkedin}}">{{$contact->linkedin}}</a></h6>
                 <hr>
                 <h6>Github: <a href="{{$contact->github}}">{{$contact->github}}</a></h6>
+                <hr>
+                <h6>Facebook: <a href="{{$contact->facebook}}">{{$contact->facebook}}</a></h6>
+                <hr>
+                <h6>Instagram: <a href="{{$contact->instagram}}">{{$contact->instagram}}</a></h6>
             </div>
         </div>
     </div>

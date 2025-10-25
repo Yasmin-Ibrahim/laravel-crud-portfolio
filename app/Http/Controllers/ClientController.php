@@ -32,7 +32,7 @@ class ClientController extends Controller
     {
         $request->validate([
             "name" => "required|string|min:3|max:50|regex:/^[a-zA-Z\s]+$/u",
-            "phone" => "required|string|min:7|max:20|regex:/^(?=.*\d)[0-9+\-\(\)\s]+$/",
+            "phone" => "required|string|min:7|max:20|regex:/^[0-9+\-\(\)\s]+$/",
             "address" => "required|string|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s,.-]+$/",
             "job" => "required|string|regex:/^[a-zA-Z\s]+$/u",
             "experience" => "required|numeric",
@@ -80,12 +80,12 @@ class ClientController extends Controller
         $client = Client::find($id);
 
         $request->validate([
-            "name" => "required|string|min:3|max:50",
-            "phone" => "required|string|min:7|max:20",
-            "address" => "required|string",
-            "job" => "required|string",
+            "name" => "required|string|min:3|max:50|regex:/^[a-zA-Z\s]+$/u",
+            "phone" => "required|string|min:7|max:20|regex:/^[0-9+\-\(\)\s]+$/",
+            "address" => "required|string|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s,.-]+$/",
+            "job" => "required|string|regex:/^[a-zA-Z\s]+$/u",
             "experience" => "required|numeric",
-            "location" => "required|string",
+            "location" => "required|string|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s,.-]+$/",
             "image" => "image|mimes:jpg,jpeg,png,webp|max:2048",
             "cost" => "required|numeric"
         ]);

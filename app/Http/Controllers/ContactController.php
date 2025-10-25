@@ -39,7 +39,8 @@ class ContactController extends Controller
             "cv" => "required|file|max:2048",
             "linkedin" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/",
             "github" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?github\.com\/.*$/",
-            "message" => "nullable|string|max:500|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s\p{P}]+$/",
+            "facebook" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?facebook\.com\/.*$/",
+            "instagram" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?instagram\.com\/.*$/",
         ]);
 
        $path = null;
@@ -60,7 +61,8 @@ class ContactController extends Controller
             "cv" => $path,
             "linkedin" => $request->linkedin,
             "github" => $request->github,
-            "message" => $request->message,
+            "facebook" => $request->facebook,
+            "instagram" => $request->instagram,
         ]);
 
         return redirect()->back()->with('success', 'The New Contacts have been added successfully.');
@@ -94,7 +96,8 @@ class ContactController extends Controller
             "cv" => "nullable|file|max:2048",
             "linkedin" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/",
             "github" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?github\.com\/.*$/",
-            "message" => "nullable|string|max:500|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s\p{P}]+$/",
+            "facebook" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?facebook\.com\/.*$/",
+            "instagram" => "nullable|url|regex:/^(https?:\/\/)?(www\.)?instagram\.com\/.*$/",
         ]);
 
         $path = $contacts->cv;
@@ -116,7 +119,8 @@ class ContactController extends Controller
             "cv" => $contacts->cv,
             "linkedin" => $request->linkedin,
             "github" => $request->github,
-            "message" => $request->message,
+            "facebook" => $request->facebook,
+            "instagram" => $request->instagram,
         ]);
 
         return redirect()->back()->with('success', 'The Contacts have been Updated successfully.');

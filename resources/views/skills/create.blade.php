@@ -29,7 +29,7 @@
                 </h3>
             </div>
             <div class="card-body">
-                <form action="" method="POST" class="form-w">
+                <form action="{{route('skill.store')}}" method="POST" class="form-w">
                     @csrf
                     <div class="form-group mb-3">
                         <select name="client_id" class="form-select
