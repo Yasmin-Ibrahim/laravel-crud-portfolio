@@ -18,6 +18,8 @@
                 <hr>
                 <h6>Address: {{$client->address}}</h6>
                 <hr>
+                <h6>The Field: {{$client->field}}</h6>
+                <hr>
                 <h6>Job: {{$client->job}}</h6>
                 <hr>
                 <h6>Experience: {{$client->experience}}</h6>

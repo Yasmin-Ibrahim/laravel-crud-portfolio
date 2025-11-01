@@ -25,7 +25,7 @@ class AboutController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            "client_id" => "required",
+            "client_id" => "required|exists:clients,id",
             "content" => "required|string|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s\p{P}]+$/"
         ]);
 

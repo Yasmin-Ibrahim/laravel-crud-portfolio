@@ -58,6 +58,15 @@
                     </div>
 
                     <div class="form-group mb-2">
+                        <label for="field">The Field: </label>
+                        <input type="text" class="form-control
+                            @error('field')
+                                is-invalid
+                            @enderror
+                            " name="field" value="{{$client->field}}">
+                    </div>
+
+                    <div class="form-group mb-2">
                         <label for="job">Job: </label>
                         <input type="text" class="form-control
                             @error('job')

@@ -29,17 +29,28 @@ class SkillController extends Controller
     {
         $request->validate([
             "client_id" => "required|exists:clients,id",
-            "type_skill" => "required|string|regex:/^[a-zA-Z\s]+$/u",
-            "name_skill" => "required|string|regex:/^[a-zA-Z\s]+$/u"
+            "type" => "required|string",
+            "title" => "required|string|regex:/^[a-zA-Z\s]+$/u",
+            "content" => "required|string"
         ]);
+
+        $content = array_map(function($item) {
+            return ucwords(trim($item));
+        }, explode(',', $request->content));
 
         Skill::create([
             "client_id" => $request->client_id,
-            "type_skill" => $request->type_skill,
-            "name_skill" => $request->name_skill
+            "type" => $request->type,
+            "title" => ucwords($request->title),
+            "content" => $content,
         ]);
 
         return redirect()->back()->with('success', 'The skill has been added successfully!');
+    }
+
+    public function show(string $id){
+        $client = Client::with('skills')->findOrFail($id);
+        return view('skills.show', compact('client'));
     }
 
     public function edit(string $id)
@@ -49,20 +60,25 @@ class SkillController extends Controller
         return view('skills.edit', compact('skill', 'clients'));
     }
 
-    public function update(Request $request, string $id)
-    {
-        $skill = Skill::find($id);
+    public function update(Request $request, string $id){
+        $skill = Skill::findOrFail($id);
 
         $request->validate([
             "client_id" => "required|exists:clients,id",
-            "type_skill" => "required|string|regex:/^[a-zA-Z\s]+$/u",
-            "name_skill" => "required|string|regex:/^[a-zA-Z\s]+$/u"
+            "type" => "required|string",
+            "title" => "required|string|regex:/^[a-zA-Z\s]+$/u",
+            "content" => "required|string"
         ]);
 
-        Skill::where('id', '=', $id)->update([
+        $content = array_map(function($item) {
+            return ucwords(trim($item));
+        }, explode(',', $request->content));
+
+        $skill->update([
             "client_id" => $request->client_id,
-            "type_skill" => $request->type_skill,
-            "name_skill" => $request->name_skill
+            "type" => $request->type,
+            "title" => ucwords($request->title),
+            "content" => $content,
         ]);
 
         return redirect()->back()->with('success', 'The Skill has been updated successfully.');

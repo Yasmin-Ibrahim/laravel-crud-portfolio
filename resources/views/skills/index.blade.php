@@ -20,7 +20,7 @@
             <div class="card-title">
                 <h3 class="title p-3">
                     <a href="{{route('skill.create')}}" class="btn btn-primary float-end">Create</a>
-                    Show Skill's Clients
+                    Client Skills List
                 </h3>
             </div>
             <div class="card-body">
@@ -29,15 +29,16 @@
                         <th>Num</th>
                         <th>ID</th>
                         <th>Type</th>
-                        <th>name</th>
-                        <th colspan="2">Action</th>
+                        <th>Title</th>
+                        <th colspan="3">Action</th>
                     </tr>
                     @foreach ($skills as $skill)
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td><a href="{{route('client.show', $skill->client_id)}}">{{$skill->client_id}}</a></td>
-                        <td>{{$skill->type_skill}}</td>
-                        <td>{{$skill->name_skill}}</td>
+                        <td>{{$skill->type}}</td>
+                        <td>{{$skill->title}}</td>
+                        <td><a href="{{route('skill.show', $skill->client_id)}}" class="text-info"><i class="fa-solid fa-eye"></i></a></td>
                         <td><a href="{{route('skill.edit', $skill->id)}}" class="text-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
                         <td><a href="{{route('skill.destroy', $skill->id)}}" class="text-danger"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>

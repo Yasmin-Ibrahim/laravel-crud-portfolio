@@ -84,8 +84,8 @@ class ClientController extends Controller
 
         return response()->json([
             "status" => 200,
-            "data" => $client,
-            "message" => "We Found This Client successfully"
+            "message" => "We Found This Client successfully",
+            "data" => $client
             ], 200);
     }
 

@@ -30,7 +30,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "client_id" => "required",
+            "client_id" => "required|exists:clients,id",
             "title" => "required|string|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s,.-]+$/",
             "description" => "required|string|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s,.-]+$/",
             "category" => "required|string|regex:/^(?=.*[a-zA-Z])[a-zA-Z0-9\s,.-]+$/",

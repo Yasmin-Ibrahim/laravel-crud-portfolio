@@ -11,6 +11,10 @@ class Skill extends Model
     use HasFactory;
     protected $table = "skills";
     protected $guarded = [];
+    protected $casts = [
+        'content' => 'array'
+    ];
+    // convert column content from json to array to easy show in website
 
     public function client(){
         return $this->belongsTo(Client::class);

@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('address');
+            $table->string('field');
             $table->string('job');
             $table->integer('experience');
             $table->string('location');

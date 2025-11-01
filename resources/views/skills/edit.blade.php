@@ -48,20 +48,26 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label for="type">Skill Type:</label>
-                        <input type="text" name="type_skill" class="form-control
-                            @error('type_skill')
-                                is-invalid
-                            @enderror"
-                         value="{{$skill->type_skill}}">
+                        <label for="type">Type:</label>
+                        <select name="type" class="form-select @error('type') is-invalid @enderror">
+                            <option selected disabled>Choose Type</option>
+                                <option value="technical skill" {{$skill->type == 'technical skill' ? 'selected' : ''}}>Technical Skill</option>
+                                <option value="soft skills" {{$skill->type == 'soft skills' ? 'selected' : ''}}>Soft Skills</option>
+                                <option value="courses" {{$skill->type == 'courses' ? 'selected' : ''}}>Courses</option>
+                                <option value="certifications" {{$skill->type == 'certifications' ? 'selected' : ''}}>Certifications</option>
+                        </select>
                     </div>
+
                     <div class="form-group mb-3">
-                        <label for="name">Skill Name:</label>
-                        <input type="text" name="name_skill" class="form-control
-                            @error('name_skill')
-                                is-invalid
-                            @enderror"
-                         value="{{$skill->name_skill}}">
+                        <label for="title">Title (Subcategory):</label>
+                        <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
+                         value="{{old('title', $skill->title)}}" placeholder="language, framework, server management">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="content">Content (Separate by comma):</label>
+                        <textarea name="content" class="form-control @error('content') is-invalid @enderror"
+                        rows="3" placeholder="Example: php, js, laravel, react">{{old('content', implode(',', $skill->content))}}</textarea>
                     </div>
 
                     <div class="d-grid mt-3">

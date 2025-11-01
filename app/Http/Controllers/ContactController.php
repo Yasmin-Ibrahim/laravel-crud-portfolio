@@ -30,7 +30,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "client_id" => "required",
+            "client_id" => "required|exists:clients,id",
             "phone" => [
                 "required",
                 "regex:/^(\+?20|0)?1[0125][0-9]{8}$/"

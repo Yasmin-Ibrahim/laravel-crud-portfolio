@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 });
-
+///////////////////////////////////////// Search function
 function checkSearch(input){
     if(input.value.trim() === ''){
         const url = input.getAttribute('data-index-url');

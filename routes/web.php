@@ -35,6 +35,7 @@ Route::prefix('skill/')->name('skill.')->group(function(){
     Route::get('create', [SkillController::class, 'create'])->name('create');
     Route::post('store', [SkillController::class, 'store'])->name('store');
     Route::get('edit/{id}', [SkillController::class, 'edit'])->name('edit');
+    Route::get('show/{id}', [SkillController::class, 'show'])->name('show');
     Route::post('update/{id}', [SkillController::class, 'update'])->name('update');
     Route::get('destroy/{id}', [SkillController::class, 'destroy'])->name('destroy');
 });
