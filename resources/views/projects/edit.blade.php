@@ -57,6 +57,7 @@
                         @enderror">
                 </div>
                  <div class="form-group mb-3">
+                    <label for="description">description: </label>
                     <textarea class="form-control" id="descriptionBox" name="description" cols="30" rows="10">{{$projects->description}}</textarea>
                 </div>
                 <div class="form-group mb-3">

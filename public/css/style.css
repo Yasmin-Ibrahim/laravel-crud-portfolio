@@ -149,6 +149,10 @@ h6 {
   margin-bottom: 5px;
 }
 
+.nav-item-contacts{
+    margin-bottom: 15px !important;
+}
+
 .sidebar-nav .nav-heading {
   font-size: 11px;
   text-transform: uppercase;
@@ -307,5 +311,21 @@ h6 {
 .formToSearch button:hover{
     background-color: gray;
     transition: all .3s;
+}
+
+.Portfolio{
+    background-color: #fff;
+    padding: 5px 15px;
+    margin-left: 30%;
+    border-radius: 5px;
+    border: 1px solid #8B5E3C;
+    font-size: 16px;
+    font-weight: 600;
+    color: #8B5E3C;
+}
+
+.Portfolio:hover{
+    color: #C19A6B;
+    background: #f6f9ff;
 }
 

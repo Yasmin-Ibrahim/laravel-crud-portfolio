@@ -5,6 +5,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\portfolioController;
 use App\Http\Controllers\ProjectController;
 
 Route::get('/', function () {
@@ -59,4 +60,6 @@ Route::prefix('contact/')->name('contact.')->group(function(){
     Route::post('update/{id}', [ContactController::class, 'update'])->name('update');
     Route::get('destroy/{id}', [ContactController::class, 'destroy'])->name('destroy');
 });
+
+Route::get("portfolio", [portfolioController::class, 'portfolio'])->name("portfolio");
 

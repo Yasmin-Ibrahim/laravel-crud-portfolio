@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APIs\ClientController;
+use App\Http\Controllers\APIs\MessageController;
 
 
 Route::prefix('client')->group(function(){
@@ -12,3 +13,7 @@ Route::prefix('client')->group(function(){
     Route::post('update/{id}', [ClientController::class, 'update']);
     Route::get('destroy/{id}', [ClientController::class, 'destroy']);
 });
+
+
+// form message
+Route::post('/message', [MessageController::class, 'store']);

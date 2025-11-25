@@ -82,12 +82,14 @@
         </a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item nav-item-contacts">
         <a class="nav-link collapsed" href="{{route('contact.index')}}">
           <i class="fa-solid fa-envelope"></i>
           <span>contacts</span>
         </a>
       </li>
+
+      <a href="{{route('portfolio')}}" class="Portfolio" target="_blank">Portfolio</a>
 
     </ul>
 
