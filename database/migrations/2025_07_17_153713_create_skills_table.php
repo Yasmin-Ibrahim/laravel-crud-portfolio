@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('type');
             $table->string('title');
             $table->json('content');
+            // $table->foreignId('port_id')->constrained('portfolios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

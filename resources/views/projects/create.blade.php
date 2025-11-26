@@ -16,6 +16,7 @@
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
+            <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
 
@@ -54,7 +55,7 @@
                 </div>
                  <div class="form-group mb-3">
                     <label for="description">description: </label>
-                    <textarea class="form-control" id="descriptionBox" name="description" cols="30" rows="10" placeholder="Description's Project:"> </textarea>
+                    <textarea class="form-control" id="descriptionBox" name="description" cols="30" rows="10" placeholder="Description's Project:">{{old('description')}}</textarea>
                 </div>
                 <div class="form-group mb-3">
                     <label for="image">Image: </label>

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('github')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
+            // $table->foreignId('port_id')->constrained('portfolios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

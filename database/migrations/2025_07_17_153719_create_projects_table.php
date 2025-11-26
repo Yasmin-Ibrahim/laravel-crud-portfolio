@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('category')->nullable();
             $table->string('image')->nullable();
             $table->string('link')->nullable();
+            // $table->foreignId('port_id')->constrained('portfolios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
