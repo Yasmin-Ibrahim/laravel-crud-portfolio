@@ -89,8 +89,6 @@
         </a>
       </li>
 
-      <a href="{{route('portfolio')}}" class="Portfolio" target="_blank">Portfolio</a>
-
     </ul>
 
   </aside>

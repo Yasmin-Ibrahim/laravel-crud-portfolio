@@ -61,5 +61,5 @@ Route::prefix('contact/')->name('contact.')->group(function(){
     Route::get('destroy/{id}', [ContactController::class, 'destroy'])->name('destroy');
 });
 
-Route::get("portfolio", [portfolioController::class, 'portfolio'])->name("portfolio");
+Route::get("portfolio/{id}", [portfolioController::class, 'portfolio'])->name("portfolio");
 

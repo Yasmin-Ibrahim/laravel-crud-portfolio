@@ -27,7 +27,7 @@
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Address</th>
-                        <th colspan="3">Action</th>
+                        <th colspan="4">Action</th>
                     </tr>
                     @foreach ($clients as $client)
                         <tr>
@@ -38,6 +38,7 @@
                             <td><a href="{{route('client.show', $client->id)}}" class="text-info"><i class="fa-solid fa-eye"></i></a></td>
                             <td><a href="{{route('client.edit', $client->id)}}" class="text-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
                             <td><a href="{{route('client.destroy', $client->id)}}" class="text-danger"><i class="fa-solid fa-trash"></i></a></td>
+                            <td><a href="{{route('portfolio', $client->id)}}" class="text-secondary" target="_blank"><i class="fa-regular fa-address-book"></i></a></td>
                         </tr>
                     @endforeach
                 </table>
